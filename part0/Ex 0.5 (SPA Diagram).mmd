@@ -18,12 +18,11 @@ sequenceDiagram
     Server-->>Browser: Notes JSON
 
 
-    User->>Browser: Adde a new 
-
+    User->>Browser: Reloads
     activate JSEvent
-    Browser->>JSEvent: GET https://studies.cs.helsinki.fi/exampleapp/new-note
-    JSEvent->>Server: Fetch request
-    Server->>JSEvent: updates part of page only (JSON)
-    JSEvent->>Browser: Updated Page
+    Browser->>JSEvent: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    JSEvent->>Server: sends a fetch() request
+    Server-->>JSEvent: JSON response
 
+    JSEvent-->>Browser: https://studies.cs.helsinki.fi/exampleapp/spa
     deactivate JSEvent

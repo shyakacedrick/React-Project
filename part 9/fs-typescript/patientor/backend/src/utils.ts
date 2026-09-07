@@ -28,8 +28,11 @@ const parseDateOfBirth = (dateOfBirth: unknown): string => {
 };
 
 const parseSsn = (ssn: unknown): string => {
-  if (!ssn || !isString(ssn)) {
-    throw new Error('Incorrect or missing ssn');
+  if (!ssn) {
+    return '';
+  }
+  if (!isString(ssn)) {
+    throw new Error('Incorrect ssn');
   }
   return ssn;
 };

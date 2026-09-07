@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v1 as uuid } from 'uuid';
 import patients from '../../data/patients.ts';
 import type { Patient, NonSensitivePatientEntry, NewPatientEntry } from '../types.ts';
 
@@ -17,7 +17,7 @@ const getNonSensitiveEntries = (): NonSensitivePatientEntry[] => {
 };
 
 const addPatient = (entry: NewPatientEntry): Patient => {
-  const id: string = uuidv4();
+  const id: string = uuid();
   const newPatient: Patient = {
     id,
     ...entry,

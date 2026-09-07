@@ -1,4 +1,4 @@
-import type { NewPatientEntry } from './types.ts';
+import type { NewPatientEntry, Gender as GenderType } from './types.ts';
 import { Gender } from './types.ts';
 
 const isString = (text: unknown): text is string => {
@@ -9,8 +9,8 @@ const isDate = (date: string): boolean => {
   return Boolean(Date.parse(date));
 };
 
-const isGender = (param: string): param is Gender => {
-  return Object.values(Gender).map(v => v.toString()).includes(param);
+const isGender = (param: string): param is GenderType => {
+  return Object.values(Gender).includes(param as any);
 };
 
 const parseName = (name: unknown): string => {
@@ -37,7 +37,7 @@ const parseSsn = (ssn: unknown): string => {
   return ssn;
 };
 
-const parseGender = (gender: unknown): Gender => {
+const parseGender = (gender: unknown): GenderType => {
   if (!gender || !isString(gender) || !isGender(gender)) {
     throw new Error('Incorrect or missing gender');
   }

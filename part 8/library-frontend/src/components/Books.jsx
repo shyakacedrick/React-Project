@@ -53,7 +53,7 @@ const Books = (props) => {
     <section className="view-panel books-view">
       <div className="view-heading"><span className="eyebrow">Curated catalogue</span><h2>books</h2><p>A living collection for curious readers.</p></div>
 
-      {selectedGenre && <p className="filter-summary">Showing titles in <strong>{selectedGenre}</strong></p>}
+      {selectedGenre && <p className="filter-summary">in genre <strong>{selectedGenre}</strong></p>}
 
       <div className="table-shell"><table>
         <tbody>
